@@ -1,0 +1,148 @@
+<h1>test works!</h1>
+<!-- this is coming from the parents : {{pData}} -->
+
+<!-- <input type="text" #getTxt (keyup)="childevent.emit(getTxt.value)" autofocus> -->
+
+<!-- <div>
+    <button style="padding: 10px; border: none; background-color: #11131e; color: whitesmoke; border-radius: 7px;" (click)="handleChangle()">check The Button to replace the value</button>
+</div>
+
+<div ng-If="isClicked">
+    <p>Button is clicked</p>
+</div>
+
+<div ng-if="!isClicked">
+    <p>Button is NOT clicked</p> -->
+
+<!-- <div style="display: flex; width: 20vw;padding-bottom:20px ; justify-content: center; flex-direction: column;">
+    type your name : <input type="text" name="name" #textBoxName (keyup)="handleChangle(textBoxName.value,textBoxName.name)">
+    type your email : <input type="email" name="email" #textBoxEmail (keyup)="handleChangle(textBoxEmail.value,textBoxEmail.name)">
+    type your password : <input type="password" name="password" #textBoxPassword (keyup)="handleChangle(textBoxPassword.value,textBoxPassword.name)">
+</div> -->
+
+<!-- <div [ngSwitch]="textBox.value">
+    <div *ngSwitchCase="'ram'">hello Ram</div>
+    <div *ngSwitchCase="'mohan'">hello mohan</div>
+    <div *ngSwitchCase="'chandan'">hello chandan</div>
+    <div *ngSwitchCase="'kali'">hello kali</div>
+    <div *ngSwitchCase="'hari'">hello hari</div>
+    <div *ngSwitchDefault>No Data Matched</div>
+</div> -->
+
+<!-- <div>
+    <ul>
+        <li *ngFor="let f of fruits; let i=index">
+            {{f}}</li>
+    </ul>
+</div> -->
+
+<!-- <div> -->
+    <!-- table data binding -->
+    <!-- <table border="1">
+        <tr>
+            <th>name</th>
+            <th>email</th>
+            <th>password</th>
+            <th>id</th>
+        </tr>
+
+        <tr *ngFor="let d of data; let i=index; trackBy: trackById">
+            <td>
+                {{d.name}}
+            </td>
+            <td>
+                {{d.email}}
+            </td>
+            <td>
+                {{d.password}}
+            </td>
+            <td>
+                {{d.id}}
+            </td>
+        </tr>
+    </table>
+    <button (click) = "addRecord()">
+        add new record
+    </button>
+</div> -->
+
+<!-- <div>
+    <ul *ngFor="let data of data">
+        <li>
+            {{data.cName}}
+        </li>
+        <ul *ngFor="let p of data.people">
+            <li>
+                {{p.name}}
+            </li>
+        </ul>
+    </ul>
+</div> -->
+
+<!-- <div>
+    <ul *ngFor="let d of data; let i=index">
+        <li [ngStyle]="{color: getStyle(d.cName)}">
+            {{d.cName}}
+            <ul *ngFor="let p of d.people">
+                {{p.name}}
+            </ul>
+        </li>
+    </ul>
+</div> -->
+
+    <!-- <div>
+        <div *ngFor="let d of res">
+            <p>
+                title:-> {{d.title}}
+            </p>
+            <p>
+                body:-> {{d.body}}
+            </p>
+        </div>
+    </div> -->
+
+
+    <!-- <div>
+        image with property binding...
+        <img [attr.src] = "imgUrl" [attr.alt]="angular_logo">
+    </div> -->
+    
+    <!-- <div>
+        <button [ngStyle]="styleBtn" (click) = "handleClick()">Left image</button>
+        <button [ngStyle]="styleBtn" (click) = "handleHideClick()">Right image</button>
+    </div>
+
+    <div>
+        image with property binding...
+        <img [attr.src] = "imgUrl" [ngStyle]="styleImg">
+    </div> -->
+
+    <!-- <div>
+        name: <input type="text" name="name" #name (keyup)="handleChange(name)">
+        Todo: <input type="text" name="todo" #todo (keyup)="handleChange(todo)">
+        <button style="margin-left: 10px; " #submit (click)="handleSubmit(submit)" [innerHTML]="uBtn"> + Add Todo</button>
+    </div>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <th>userName</th>
+            <th>Todo's</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+
+        <tr *ngFor="let t of todosArray; let i=index">
+            <td>{{t.name}}</td>
+            <td>{{t.todo}}</td>
+            <td (click) = "handleDelete(i)">Delete</td>
+            <td (click) = "handleUpdate(t,i)">Update</td>
+        </tr>
+    </tbody>
+</table> -->
+
+<!-- <input type="text" name="text" [value]='test' (input) = 'test=$test.target.value'> -->
+<!-- <input type="text" [(ngModel)]="test" value="" placeholder="hey..."> -->
+<p>{{test}}</p>
+
+<h1>Hello world</h1>
