@@ -130,7 +130,6 @@ name: any
   handleChange(){
     this.isClicked = !this.isClicked
   }
- 
 }
   // checkData = () =>{
   //   this.fetchUser().then(this.getUser)

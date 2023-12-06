@@ -193,6 +193,11 @@
       </div>
     </div>
   </nav>
-  <div *ngFor="let data of name;let i=index">
-    <p>{{data.username}}</p>
+  <div *ngIf="!name;else dataGot">
+    <h1>LOading...</h1>
   </div>
+  <ng-template #dataGot>
+    <div *ngFor="let data of name">
+        {{data.username}}
+    </div>
+  </ng-template>
