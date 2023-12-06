@@ -6,22 +6,30 @@ import { AppComponent } from './app.component';
 import { DemoClass } from './demo-class';
 import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
+import { PipeTestPipe } from './pipe-test.pipe';
+import { ServiceComponent } from './service/service.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactComponent } from './contact/contact.component';
+import { NameService } from './name.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    PipeTestPipe,
+    ServiceComponent,
+    AboutUsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [DemoClass],
+  providers: [DemoClass,NameService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(private object:DemoClass){
-    object
-  }
+  name: any
+  constructor(){}
  }

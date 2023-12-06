@@ -1,7 +1,19 @@
-<h1>Helo world from Parent</h1>
+<!-- <h1>Helo world from Parent</h1> -->
 <!-- <input type="text" #pComponent (keyup)="0"> -->
 <!-- <app-test [pData] = "pComponent.value"></app-test> -->
-<app-test (childevent) = 'get($event)'></app-test>
+<app-test></app-test>
 
 <!-- {{cData}} -->
-<!-- <router-outlet></router-outlet> -->
+<router-outlet></router-outlet>
+<!-- <table border="2">
+    <tr *ngFor="let d of data ; let i=index">
+        <td>
+            {{i+1}}
+        </td> 
+        <td>
+            {{d.cName | pipeTest }}
+        </td>
+</tr>
+</table> -->
+<!-- <button (click)="handleRoute()">go to Service Page</button> -->
+<a [routerLink]="['/aboutus']" routerLinkActive="router-link-active" >go to Service Page</a>

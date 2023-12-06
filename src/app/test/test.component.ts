@@ -1,8 +1,12 @@
 import { NgSwitch } from '@angular/common';
 import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 import { find, map, retry, switchAll, switchMap, tap } from 'rxjs';
+import { PipeTestPipe } from '../pipe-test.pipe';
+import { Router } from '@angular/router';
+import { NameService } from '../name.service';
 
 @Component({
+  providers:[PipeTestPipe],
   selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css'],
@@ -12,78 +16,95 @@ import { find, map, retry, switchAll, switchMap, tap } from 'rxjs';
 })
 export class TestComponent {
   // @Output() childevent: any = new EventEmitter();
-  // isClicked:boolean = true
+  isClicked:boolean = true
 
-
-  // data: any[] = [
-  //   {
-  //     id: 1,
-  //     cName: "India",
-  //     people: [
-  //       {
-  //         name: "hari"
-  //       },
-  //       {
-  //         name: "kuldeep"
-  //       },
-  //       {
-  //         name: "sunil chettri"
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     id: 2,
-  //     cName: "UK",
-  //     people: [
-  //       {
-  //         name: "hari-uk"
-  //       },
-  //       {
-  //         name: "kuldeep-uk"
-  //       },
-  //       {
-  //         name: "sunil chettri-uk"
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     id: 1,
-  //     cName: "Autralia",
-  //     people: [
-  //       {
-  //         name: "hari-aus"
-  //       },
-  //       {
-  //         name: "kuldeep-aus"
-  //       },
-  //       {
-  //         name: "sunil chettri-aus"
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     id: 1,
-  //     cName: "china",
-  //     people: [
-  //       {
-  //         name: "hari-chn"
-  //       },
-  //       {
-  //         name: "kuldeep-chn"
-  //       },
-  //       {
-  //         name: "sunil chettri-chn"
-  //       }
-  //     ]
-  //   }
-  // ]
+  data: any = [
+    {
+      id: 1,
+      cName: "India",
+      people: [
+        {
+          name: "hari"
+        },
+        {
+          name: "kuldeep"
+        },
+        {
+          name: "sunil chettri"
+        }
+      ]
+    },
+    {
+      id: 2,
+      cName: "UK",
+      people: [
+        {
+          name: "hari-uk"
+        },
+        {
+          name: "kuldeep-uk"
+        },
+        {
+          name: "sunil chettri-uk"
+        }
+      ]
+    },
+    {
+      id: 1,
+      cName: "Autralia",
+      people: [
+        {
+          name: "hari-aus"
+        },
+        {
+          name: "kuldeep-aus"
+        },
+        {
+          name: "sunil chettri-aus"
+        }
+      ]
+    },
+    {
+      id: 1,
+      cName: "china",
+      people: [
+        {
+          name: "hari-chn"
+        },
+        {
+          name: "kuldeep-chn"
+        },
+        {
+          name: "sunil chettri-chn"
+        }
+      ]
+    }
+  ]
+ 
   // res: any = [{}]
   // imgUrl: string = ""
   // angular_logo: string = ""
   // styleBtn: any 
   // styleImg: any 
-  test:string = ""
-  constructor() {
+  // test = new Date()
+  // number:number = 0.123256633
+//   number:number = 92
+//   ansArr :any
+// fetchCHeck : any
+// url: any
+// data1 : any
+// respData: any
+test: any 
+name: any
+
+  constructor(private router: Router,private nameServiceApi: NameService) {    
+ 
+    this.nameServiceApi.fetchUser().then((data) => this.name = data)
+    // console.log(this.name.from(this.name))
+    // this.fetchUser()
+ 
+    // console.log(this.fetchUsers())
+  //  console.log(this.fetchUsers())
     // this.test = "please write there in text box"
     // console.log(this.data)
     // try {
@@ -106,6 +127,31 @@ export class TestComponent {
     //   "translate" : "0px"
     // }
   }
+  handleChange(){
+    this.isClicked = !this.isClicked
+  }
+ 
+}
+  // checkData = () =>{
+  //   this.fetchUser().then(this.getUser)
+  // }
+//  fetch data with promise by kali done 
+  // getUser= (result: any)=>{
+  //   console.log(result)
+  // }
+ 
+  // fetchUser(){
+  //   let abcd = new Promise(async (resolve,reject)=>{
+  //     let data = await fetch('https://mern-i.onrender.com/users/')
+  //     if(data != null){
+  //       resolve(data.json())
+  //     }else{
+  //       reject()
+  //     }
+  //   })
+  //   abcd.then(this.getUser)
+  // }
+//  compeleted
 
   // handleClick(){
   //   this.styleImg.translate = "400px" 
@@ -204,6 +250,7 @@ export class TestComponent {
 
 
 
+
   // handleChange(name: any){
   //   // console.log(name.value,name.name)
   //   this.todos[name.name] = name.value
@@ -280,4 +327,4 @@ export class TestComponent {
   // }
   // this.data[field] = val
   // }
-}
+
