@@ -4,6 +4,7 @@ import { find, map, retry, switchAll, switchMap, tap } from 'rxjs';
 import { PipeTestPipe } from '../pipe-test.pipe';
 import { Router } from '@angular/router';
 import { NameService } from '../name.service';
+import { NumApiService } from '../num-api.service';
 
 @Component({
   providers:[PipeTestPipe],
@@ -96,8 +97,9 @@ export class TestComponent {
 // respData: any
 test: any 
 name: any
+number: any
 
-  constructor(private router: Router,private nameServiceApi: NameService) {    
+  constructor(private router: Router,private nameServiceApi: NameService,private num:NumApiService) {    
  
     this.nameServiceApi.fetchUser().then((data) => this.name = data)
     // console.log(this.name.from(this.name))
@@ -126,6 +128,21 @@ name: any
     //   "transition":"all 2s ease",
     //   "translate" : "0px"
     // }
+  }
+
+  login(unm:any , pass:any){
+    // console.log(unm.value,pass.value)
+    if(unm.value == "admin" && pass.value == "admin"){
+      localStorage.setItem("userLoggedIn","true")
+    }else{
+      localStorage.setItem("userLoggedIn","false")
+    }
+  }
+  
+  addNumber(val:any){
+    this.num.setNumber(val.value)
+    this.number = this.num.getNumber()
+    val.value = ""
   }
   handleChange(){
     this.isClicked = !this.isClicked

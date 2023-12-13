@@ -1,1 +1,46 @@
-<p>contact works!</p>
+<!-- this is with the template driven form -->
+
+<!-- <div class="h-[90vh] w-[99vw] flex items-center justify-center">
+    <form class="border border-red-100 flex justify-center" #regForm="ngForm" (ngSubmit)="register(regForm)">
+        <input type="text" name="username" autofocus ngModel required
+            class="ring-1 ring-purple-400 m-2 p-2 outline-none focus:ring-2 focus:ring-purple-600 text-purple-500 font-bold rounded-sm focus:bg-purple-50">
+        <input type="password" name="password" ngModel required
+            class="ring-1 ring-purple-400 m-2 p-2 outline-none focus:ring-2 focus:ring-purple-600 text-purple-500 font-bold rounded-sm focus:bg-purple-50">
+        <button [disabled]="!regForm.valid" class="bg-purple-800 text-white font-bold focus:bg-purple-900 px-4 m-2 rounded-sm hover:bg-purple-700"
+        [ngClass]="regForm.valid? 'bg-purple-800' : 'bg-purple-950'"
+        >
+            submit
+        </button>
+    </form>
+</div> -->
+
+<!-- form group & reactive forms method -->
+
+<div class="h-[90vh] w-[99vw] flex items-center justify-center">
+    <form [formGroup]="signupForm" (ngSubmit)="register(signupForm)" class="border border-red-100 flex flex-col justify-center gap-3 p-4 shadow-xl">
+        <input type="text" formControlName="username" autofocus 
+            class="ring-1 ring-purple-400 m-2 p-2 outline-none focus:ring-2 focus:ring-purple-600 text-purple-500 font-bold rounded-sm focus:bg-purple-50" value="">
+            <!-- <div *ngIf="username.errors.required">Name is required.</div> -->
+        <input type="password" formControlName="password"
+            class="ring-1 ring-purple-400 m-2 p-2 outline-none focus:ring-2 focus:ring-purple-600 text-purple-500 font-bold rounded-sm focus:bg-purple-50">
+        <div class="flex items-center justify-center gap-4">
+            <div>
+                <input type="radio" formControlName="radio" id="radio" value="male" required>male
+            </div>
+            <div>
+                <input type="radio" formControlName="radio" id="radio1" value="female" >female
+            </div>
+        </div>
+        <div class="flex items-center justify-center gap-4">
+            <div>
+                <input type="checkbox" formControlName="checkbox" id="chck" value="Biker" required>Bike Riding
+            </div>
+            <div>
+                <input type="checkbox" formControlName="checkbox1" id="chck1" value="Cricket" >Cricket
+            </div>
+        </div>
+        <button [disabled]="!signupForm.valid" class="bg-purple-800 text-white font-bold focus:bg-purple-900 px-4 p-2 m-2 rounded-sm hover:bg-purple-700 ring-2 ring-purple-700 ring-offset-4 hover:ring-offset-0 transition-all ease focus:ring-1"
+        >Submit
+        </button>
+    </form>
+</div>

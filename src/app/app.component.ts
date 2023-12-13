@@ -21,6 +21,7 @@ export class AppComponent {
     console.log("got")
     this.cData = val
   }
+  
   data: any = [
     {
       id: 1,
@@ -84,6 +85,6 @@ export class AppComponent {
     }
   ]
   constructor(private router: Router){
-    
+    localStorage.setItem("userLoggedIn","false")
   }
 }

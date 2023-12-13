@@ -184,20 +184,42 @@
             <a [routerLink]="['/service']" routerLinkActive="router-link-active"  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Services</a>
           </li>
           <li>
-            <a [routerLink]="['/contact']" routerLinkActive="router-link-active"  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Pricing</a>
+            <a [routerLink]="['/contact']" routerLinkActive="router-link-active"  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Contact</a>
           </li>
           <li>
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Contact</a>
+            <a [routerLink]="['/student']" routerLinkActive="router-link-active"  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Student</a>
           </li>
+          
         </ul>
       </div>
     </div>
   </nav>
-  <div *ngIf="!name;else dataGot">
+  <!-- <div *ngIf="!name;else dataGot">
     <h1>LOading...</h1>
   </div>
   <ng-template #dataGot>
     <div *ngFor="let data of name">
         {{data.username}}
     </div>
-  </ng-template>
+  </ng-template> -->
+<!-- 
+  <h2 class="text-xl font-bold">
+    Test Component
+  </h2>
+  <input type="text" class="border border-1" #num>
+  <button (click)="addNumber(num)">Add Number</button>
+  <div>
+    <ul>
+        <li *ngFor="let data of number">
+            {{data}}
+        </li>
+    </ul>
+  </div> -->
+
+  <!-- <div>
+    <input type="text" #unm name="username">
+    <input type="password" #pass name="password">
+    <button (click)="login(unm,pass)">login</button>
+  </div> -->
+
+  <!-- <app-test2></app-test2> -->
